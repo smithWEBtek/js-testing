@@ -13,12 +13,12 @@ body {
 .input-container label,
 .input-container input {
   display: block;
+  font: inherit;
   width: 100%;
 }
 
-.input-container input {
-  font: inherit;
-}
+/* .input-container input { */
+/* } */
 
 .button {
   font: inherit;

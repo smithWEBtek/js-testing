@@ -1,6 +1,7 @@
 exports.generateText = (name, age) => {
   // Returns output text
   return `${name} (${age} years old)`;
+  // return `Max (29 years old)`;  // creates false positive
 };
 
 exports.createElement = (type, text, className) => {
@@ -20,7 +21,18 @@ exports.validateInput = (text, notEmpty, isNumber) => {
     return false;
   }
   if (isNumber && +text === NaN) {
+    console.log("Something is not right.")
     return false;
   }
   return true;
 };
+
+exports.checkAndGenerate = (name, age) => {
+  if (
+    !this.validateInput(name, true, false) ||
+    !this.validateInput(age, false, true)
+  ) {
+    return false;
+  }
+  return this.generateText(name, age);
+}
